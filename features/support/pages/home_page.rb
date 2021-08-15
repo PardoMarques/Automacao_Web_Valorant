@@ -1,6 +1,6 @@
 require_relative '../env.rb'
 
-class HomePage
+class HomePage < BasePage
 
     attr_accessor :driver
     def initialize(webDriver)
