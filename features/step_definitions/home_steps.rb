@@ -13,8 +13,8 @@
         @home.irParaPagina()
     end
 
-    Quando('trocar o idioma para o Inglês') do
-        @home.trocarIdioma("English (NA)")
+    Quando('trocar o idioma para o {string}') do |idioma|
+        @home.trocarIdioma(idioma)
     end
 
 # end
