@@ -5,17 +5,17 @@
             Quero: Percorrer os fluxos da página inicial
             Para: Validar os caminhos possíveis
 
-            @escolha0
-            Cenario: Validando minimamente a pagina Home
+            Contexto: Acessando com um usuário Default a página do Valorant
             Dado um usuario Player Normal de Valorant
             Quando acessar a página Home
+
+            @home
+            Cenario: Validando minimamente a pagina Home
             Então encontrará a breve descrição do jogo
 
-            @escolha1
+            @tradutores
             Esquema do Cenario: Validando a funcionalidade de idiomas
-            Dado um usuario Player Normal de Valorant
-            Quando acessar a página Home
-            E trocar o idioma para o <idioma>
+            Quando trocar o idioma para o <idioma>
             Então a descrição modificada do jogo será <textoCorrespondente>
             Exemplos:
             | idioma            | textoCorrespondente                                                       |
@@ -38,4 +38,55 @@
             | "繁體中文"        | "以角色為核心的5對5戰略射擊遊戲"                                          |
             | "العربية"         | "لعبة تصويب تكتيكي تعتمد على الشخصيات بنمط 5v5"                           |
 
+            @home_seusAgentes_info
+            Cenario: Validando informações de Seus Agentes na pagina Home
+            Quando o usuário scrollar até o texto "SEUS AGENTES"
+            Então encontrará a breve descrição sobre Seus Agentes
 
+            @home_seusAgentes_botao
+            Cenario: Validando informações de Seus Agentes na pagina Home
+            Quando o usuário scrollar até o texto "SEUS AGENTES"
+            E clicar no botão titulo do texto da homepage "SEUS AGENTES"
+            Então sera redirecionado para a página Seus Agentes
+
+            @home_seusMapas_info
+            Cenario: Validando informações de Seus Mapas na pagina home
+            Quando o usuário scrollar até o texto "SEUS MAPAS"
+            Então encontrará a breve descrição sobre Seus Mapas
+
+            @home_seusMapas_Botao
+            Cenario: Validando o botão Seus Mapas na pagina home
+            Quando o usuário scrollar até o texto "SEUS MAPAS"
+            E clicar no botão titulo do texto da homepage "VER TODOS OS MAPAS"
+            Então será redirecionado para a página Mapas
+
+            @home_nosSomosValorant_info
+            Cenario: Validando informações de Nós Somos Valorant na pagina home
+            Quando o usuário scrollar até o texto "NÓS SOMOS VALORANT"
+            Então encontrará a breve descrição sobre Nós Somos Valorant
+
+            @home_trailer_link
+            Cenario: Validando o link trailer na pagina home
+            Quando o usuário scrollar até o texto "NÓS SOMOS VALORANT"
+            E clicar no link do texto da homepage "Assista ao trailer da mecânica de jogo aqui."
+            Então abrirá o trailer do jogo
+
+            @home_ultimasNoticias_botao
+            Cenario: Validando o botão últimas notícias
+            Quando o usuário scrollar até o texto "ÚLTIMAS NOTÍCIAS"
+            E clicar no botão titulo do texto da homepage "IR PARA A PÁGINA DE NOTÍCIAS"
+            Então será redirecionado para a página Notícias
+
+            @home_redirecionadores
+            Esquema do Cenario: Validando as redirecionadas das opções do cabeçalho
+            Quando clicar na opção <opcao> do cabeçalho
+            Então a descrição inicial do redirecionamento será <textoCorrespondente>
+            Exemplos:
+            | opcao    | textoCorrespondente |
+            | "botaoA" | "abcd"              |
+            | "botaoB" | "abcd"              |
+            | "botaoC" | "abcd"              |
+            | "botaoD" | "abcd"              |
+            | "botaoE" | "abcd"              |
+            | "botaoF" | "abcd"              |
+            | "botaoG" | "abcd"              |

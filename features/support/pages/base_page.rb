@@ -139,6 +139,23 @@ class BasePage
             box_idioma.find_element(:xpath, "//*[contains(text(),'#{escolha}')]").click
         end
 
+        def scrollDownBy(yValue)
+            self.driver.execute_script("window.scrollBy(0, #{yValue});")
+        end
+
+        def scrollUpBy(yValue)
+            self.driver.execute_script("window.scrollBy(0, -#{yValue});")
+        end
+
+        def scrollToElement(elemento)
+            self.driver.execute_script("arguments[0].scrollIntoView(true);", elemento)
+        end
+
+        def scrollToText(texto)
+            elemento = self.driver.find_element(:xpath, "//*[contains(text(),'#{texto}')]")
+            self.driver.execute_script("arguments[0].scrollIntoView(true);", elemento)
+        end
+
     # end
 
 end
